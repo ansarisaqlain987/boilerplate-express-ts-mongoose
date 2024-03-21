@@ -6,6 +6,11 @@ const routes: AppRoute[] = [{
     endpoint: '/',
     middlewares: [],
     controller: UserController.getUsers
+}, {
+    method: 'POST',
+    endpoint: '/login',
+    middlewares: [],
+    controller: UserController.login
 }]
 
 export default {

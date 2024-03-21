@@ -1,5 +1,5 @@
 import { Express } from 'express';
-import { file } from '../utils';
+import { getFileNames } from '../utils';
 import { AppRoute, RouteExport } from '../types';
 
 const sanitizeEndpoint = (str: string) => {
@@ -46,7 +46,7 @@ const setMethods = (prefix: string, app: Express, route: AppRoute, base: string)
 }
 
 export const setRoutes = (prefix: string, app: Express) => {
-    const names = file.getFileNames('src/routes');
+    const names = getFileNames('src/routes');
     const filteredNames = names.filter((fn) => fn.includes('.route.ts'));
     console.log('Routes setup started...!!!')
     filteredNames.map((fname: string) => {

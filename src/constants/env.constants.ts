@@ -1,6 +1,6 @@
-import { parse } from "../utils";
+import { serializePort } from "../utils";
 
 export const ENV = {
-    PORT: parse.serializePort(process.env.PORT, 8000),
-    DB_URL: process.env.DB_URL || 'mongo+srv://localhost:5432/test_db'
+    PORT: serializePort(process.env.PORT, 8000),
+    DB_URL: process.env.DB_URL || 'mongodb://localhost:27017/test_db'
 }
